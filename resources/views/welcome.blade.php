@@ -24,8 +24,8 @@
     <div id="app">
         @include('layouts.navigation')
 
-        <main class="py-4">
-            {{ config('app.name') }}
+        <main class="py-4" style="margin-top: 50px;text-align: center;">
+            <h1>{{ config('app.name') }}</h1>
         </main>
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
