@@ -1,93 +1,104 @@
-Setup Instructions
+# Setup Instructions
 
 Follow these steps to set up the Backend project locally.
 
-Prerequisites
+## Prerequisites
 
 Ensure you have the following installed:
+- **PHP** (version 8.0 or higher)
+- **Composer**
+- **MySQL**
+- **Laravel Installer** (optional)
+- **Mailtrap account** (for local email testing)
 
-- PHP (version 8.0 or higher)
-- Composer
-- MySQL
-- Laravel Installer (optional)
-- Mailtrap account (for local email testing)
+---
 
-1. Clone the Repository
+## 1. Clone the Repository
 
 Clone the repository from GitHub:
 
-git clone https://github.com/amitkolloldey/sji-doctors-booking-backend.git
+```
+git clone https://github.com/amitkolloldey/nine_kiwis_chrome_extension_backend.git
+cd nine_kiwis_chrome_extension_backend
+```
 
-cd sji-doctors-booking-backend
+---
 
-2. Create the .env File
+## 2. Create the `.env` File
 
-Create a copy of the .env.example file and rename it to .env:
+Create a copy of the `.env.example` file and rename it to `.env`:
 
+```
 cp .env.example .env
+```
 
-3. Install PHP Dependencies
+---
+
+## 3. Install PHP Dependencies
 
 Run the following command to install PHP dependencies using Composer:
 
-composer install    
+```
+composer install
+```
 
-4. Generate the Application Key
+---
+
+## 4. Generate the Application Key
 
 Generate the application key for your project by running the following command:
 
+```
 php artisan key:generate
+```
 
-This command will automatically generate and set the APP_KEY in your .env file.
+This command will automatically generate and set the `APP_KEY` in your `.env` file.
 
-5. Set Up Your .env File
+---
 
-php artisan serve
+## 5. Set Up Your `.env` File
 
-Open the .env file in the project root and add the following configuration:
+Update the `.env` file in the project root with the following configuration:
 
-Set the Backend URL
-
+### Set the Backend URL:
+```env
 APP_URL=http://127.0.0.1:8000
+```
 
-Set the Frontend URL
-
-Add the URL for your frontend application (assuming it's running locally on port 3000):
-
-FRONT_URL=http://localhost:3000
-
-Set Up Database Connection
-
-Configure the database connection details:
-
+### Set Up the Database Connection:
+```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=8889
-DB_DATABASE=sji_doctors_booking
+DB_DATABASE=nine_kiwis_chrome_extension_backend
 DB_USERNAME=root
 DB_PASSWORD=
+```
 
-Set Up Mailtrap for Email Testing
+---
 
-To test email functionality locally, sign up for a Mailtrap account. Once you have your test credentials, configure the .env file for Mailtrap as follows:
+## 6. Migrate the Database
 
-MAIL_MAILER=smtp
-MAIL_HOST=smtp.mailtrap.io
-MAIL_PORT=587
-MAIL_USERNAME=username
-MAIL_PASSWORD=password
-MAIL_ENCRYPTION=tls
-MAIL_FROM_ADDRESS=noreply@sjidoctorsbooking.com
-MAIL_FROM_NAME="${APP_NAME}"
+After setting up the database, run the migrations to create the necessary tables:
 
-6. Migrate the Database
-
-After setting up the database, run the migrations to set up the necessary database tables:
-
+```bash
 php artisan migrate
+```
 
-This will apply the migrations and create the necessary tables in your database.
+---
 
-1. Access the API
+## 7. Run the Local Development Server
 
-Once the server is running, you can access the backend API at http://127.0.0.1:8000.
+Start the Laravel development server:
+
+```bash
+php artisan serve
+```
+
+---
+
+## 8. Access the Backend
+
+Once the server is running, you can access the backend API at:
+
+[http://127.0.0.1:8000](http://127.0.0.1:8000)
